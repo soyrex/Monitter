@@ -1,0 +1,304 @@
+
+body
+{
+	font-family: helvetica;
+	background:#222;
+	font-size:12pt;
+	margin:0;
+	padding: 0;
+	color: #999;
+	overflow:hidden;
+}
+body.white
+{
+	color:#333;
+	background:#fff;
+}
+#header
+{
+	position: absolute;
+	background: rgba(10,10,10,1) url(../i/logo.png) 10px 10px no-repeat;
+	border-top:3px solid #00aeef;
+	height: 20px;
+	padding: 15px 0;
+	z-index: 100;
+	top: 0;;
+	width: 100%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+#header input
+{
+	margin: 0;
+	border-radius: 2px;
+	border: 1px solid #555;
+	color: #999;
+	background:-moz-linear-gradient(top, #111, #222);
+	background:-webkit-linear-gradient(top, #111, #222);
+	padding: 5px 8px;
+	font-size: 80%;
+	line-height:1;
+	height: 14px;
+	position: absolute;
+	top: 13px;
+	left: 140px;
+	width: 95px;
+	padding-right: 67px;
+}
+body.white #header input
+{
+	
+	color: #222;
+	background:-moz-linear-gradient(top, #ccc, #eee);
+	background:-webkit-linear-gradient(top, #ccc, #eee);
+}
+#header ul.right
+{
+	display:block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	height: 30px;
+	position: absolute;
+	top: 13px;
+	right: 10px;
+	z-index: 99999;
+}
+#header ul.right li
+{
+	display:block;
+	float:right;
+	margin:2px 0;
+	padding:0;
+}
+#header ul.right a
+{
+	display: block;
+	float:right;
+	padding: 4px 8px;
+	margin-right: 2px;
+	text-decoration: none;
+	color:#ccc;
+	font-size: 70%;
+	border-radius: 3px;
+}
+#header ul.right a:hover
+{
+	background: rgba(130,130,130,0.4);
+	color:#fff;;
+	
+}
+#monitterbutton
+{
+	margin: 0;
+	background:-moz-linear-gradient(top, #555, #222);
+	background:-webkit-linear-gradient(top, #555, #222);
+	border: 1px solid #555;
+	color: #fff;;
+	border-radius: 2px;
+	text-decoration: none;
+	padding: 5px 8px;
+	font-size: 80%;
+	line-height: 1;
+	height: 14px;
+	position: absolute;
+	top: 13px;
+	left: 290px;
+	
+	
+}
+#monitterbutton:hover
+{
+	background:#ccc;
+	color: #333;
+}
+div#columns
+{
+	overflow: hidden;
+	height: 300px;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 100%;
+}
+.column
+{
+	float: left;
+	background: #222;
+	background:-moz-linear-gradient(left, rgba(0,0,0,0.1), rgba(0,0,0,0));
+	background:-webkit-linear-gradient(left, rgba(0,0,0,0.1), rgba(0,0,0,0));
+	color:#ccc;;
+	overflow: hidden;
+	position: relative;
+	min-height: 1000px;
+}
+.column .tweets
+{
+	position: relative;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+.column article
+{
+	overflow:hidden;
+	-webkit-transition: background 1s easein;
+}
+.column article img
+{
+	float: left;
+	margin-right: 5px;
+	box-shadow: 0 0 4px rgba(100,100,100,0.4);
+	border: 1px inset #555;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background:#222;
+}
+body.white .column article img
+{
+	border: 1px inset #ccc;	
+}
+.column article
+{
+	position: relative;
+	padding: 15px;
+	background:rgba(30,30,30,0.2);
+	background:-moz-linear-gradient(top, #434343, #333);
+	background:-webkit-linear-gradient(top, #434343, #333);
+	font-size:90%;
+	line-height: 1.4;
+	-moz-transition: opacity 1s ease-in;
+	-webkit-transition: opacity 1s ease-in;
+	border-left:1px solid #444;
+	border-right:1px solid #222;
+	color: #ccc;	
+}
+
+body.white .column article
+{
+	background:-moz-linear-gradient(top, #eee, #fff);
+	background:-webkit-linear-gradient(top, #eee, #fff);
+	border-left:1px solid #fff;
+	border-right:1px solid #cfe6ff;
+	border-bottom:1px solid #cfe6ff;
+	color: #333;	
+}
+.column article p.body,
+.column article p.time,
+.column article p.user
+{		
+	display:block;
+	margin: 0;
+	margin-left: 65px;
+}
+.column article p.user small
+{
+	color: #666;
+}
+.column article a.user
+{
+	text-decoration: none;
+	font-size: 120%;
+	color: #999;	
+}
+body.white .column article a.user
+{
+	color:#000;
+}
+.column article p.body
+{
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+.column article p.time
+{
+	color: #999;
+}
+.column article p.actions
+{
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}	
+.column article p.actions a
+{
+	display: block;
+	float: right;
+	overflow: hidden;
+	text-indent: -999pt;
+	width: 16px;
+	height: 16px;
+	margin: 0 2px;
+	background-image: url(../i/everything-spritev2.png);	
+}
+.column article a.reply
+{
+	background-position: 0px 0px;
+}
+.column article a.reply:hover
+{
+	background-position: -16px 0px;
+}
+
+.column article a.retweet
+{
+	background-position: -80px 0px;
+}
+.column article a.retweet:hover
+{
+	background-position: -96px 0px;
+}
+
+.column article a.favorite
+{
+	background-position: -32px 0px;
+}
+.column article a.favorite:hover
+{
+	background-position: -48px 0px;
+}
+.column div.bar
+{
+	z-index: 99;
+	background: rgba(0,0,0,0.3);
+	width: 10px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	height:0;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	display: none;
+}
+.column .config
+{
+	height: 300px;
+	background: rgba(0,0,0,0.1);
+	color:#ccc;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	
+}
+.column .config div.map
+{
+	width:100%;
+	height: 200px;
+	border-right: 1px solid #222;
+}
+div.column div.msg
+{
+	position: absolute;
+	top: -30px;
+	height:30px;
+	width: 100%;
+	background: rgba(30,30,30,0.7);
+	z-index: 1000;
+	font-size: 80%;
+	text-align:center;
+	line-height: 30px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<title>monitter</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/c/monitter.css" />
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript">
+	  function initialize() {
+	  }
+
+	</script>
+		
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/socket.io/0.6.2/socket.io.min.js"></script>
+
+	<script type="text/javascript" src="/j/jquery.mousewheel.min.js"></script>
+	<!--script type="text/javascript" src="/j/ejs.min.js"></script-->
+	<script type="text/javascript" src="/j/monitter-client.js"></script>
+</head>
+<body>
+	<div id="header">		
+		<ul class="right">
+			<li><a href="#" class="colourToggle">Switch Colour</a></li>
+			<li><a href="mailto:alex@monitter.com">Contact</a></li>
+			<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5091474">Donate</a></li>
+			<li><a href="/widgets/index.html">Widgets</a></li>		
+		</ul>
+		<input type="text" id="newsearch"></input>
+		<a href="#" id="monitterbutton">monitter</a>
+	</div>
+	<div id="columns"></div>
+	<div id="map_canvas"></div>
+	<script type="text/javascript">
+	(function() {
+	  if (window.__twitterIntentHandler) return;
+	  var intentRegex = /twitter\.com(\:\d{2,4})?\/intent\/(\w+)/,
+	      windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes',
+	      width = 550,
+	      height = 420,
+	      winHeight = screen.height,
+	      winWidth = screen.width;
+	    
+	  function handleIntent(e) {
+	    e = e || window.event;
+	    var target = e.target || e.srcElement,
+	        m, left, top;
+
+	    while (target && target.nodeName.toLowerCase() !== 'a') {
+	      target = target.parentNode;
+	    }
+
+	    if (target && target.nodeName.toLowerCase() === 'a' && target.href) {
+	      m = target.href.match(intentRegex);
+	      if (m) {
+	        left = Math.round((winWidth / 2) - (width / 2));
+	        top = 0;
+
+	        if (winHeight > height) {
+	          top = Math.round((winHeight / 2) - (height / 2));
+	        }
+
+	        window.open(target.href, 'intent', windowOptions + ',width=' + width +
+	                                           ',height=' + height + ',left=' + left + ',top=' + top);
+	        e.returnValue = false;
+	        e.preventDefault && e.preventDefault();
+	      }
+	    }
+	  }
+
+	  if (document.addEventListener) {
+	    document.addEventListener('click', handleIntent, false);
+	  } else if (document.attachEvent) {
+	    document.attachEvent('onclick', handleIntent);
+	  }
+	  window.__twitterIntentHandler = true;
+	}());
+	</script>
+</body>
+</html>
